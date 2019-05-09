@@ -1,0 +1,208 @@
+@charset "ISO-8859-1";
+
+@import "https://use.fontawesome.com/releases/v5.5.0/css/all.css";
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+	background-size: cover;
+}
+
+.titulo {
+	width: 500px;
+	height: 350px;
+	position: absolute;
+	top: 3%;
+	left: 3%;
+	transform: translate(10%, 10%);
+	font: Verdada;
+	font-size: 30px;
+	color: white;
+}
+
+.center {
+	align-items: center;
+}
+
+.subtitulo {
+	width: 500px;
+	height: 350px;
+	position: absolute;
+	top: 10%;
+	left: 7%;
+	transform: translate(10%, 10%);
+	font: Verdada;
+	font-size: 20px;
+	color: gray
+}
+
+.imgFundo {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	background-size: cover;
+}
+
+.imglogin {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	background-size: cover;
+}
+
+.login-box {
+	width: 250px;
+	height: 250px;
+	position: absolute;
+	top: 20%;
+	right: 15%;
+	transform: translate(10%, 10%);
+	font: Verdada;
+	text-align: center;
+}
+
+.caixa {
+	width: 200px;
+	height: 650px;
+	position: absolute;
+	top: 4%;
+	right: 1.5%;
+	transform: translate(2.5%, 7%);
+	text-align: center;
+	background:white;
+	opacity: 0.8;
+	font: Verdada;
+	align-items: center;
+	border-radius: 8px;
+}
+
+.tabelapessoa {
+	width: 97%;
+	height: 25%;
+	position: absolute;
+	top: 50%;
+	left: 1, 5%;
+	text-align: center;
+	background: gray;
+	opacity: 0.9;
+	font: Verdada;
+	transform: translate(1.5%, 2.5%);
+	align-items: center;
+}
+
+.textboxcadastro {
+	width: 100%;
+	overflow: hidden;
+	font-size: 20px;
+	padding: 8px 0;
+	margin: 8px 0;
+	border-bottom: 2px solid #ffffff;
+}
+
+.textboxcadastro input {
+	border: none;
+	outline: none;
+	background: white;
+	color: maroon;
+	font-size: 18px;
+	width: 80%;
+	float: center;
+	margin: 0 10px;
+	opacity: 0.9;
+	height: 30px;
+}
+
+.textboxcadastro label {
+	border: none;
+	outline: none;
+	background: none;
+	color: lime;
+	font-size: 18px;
+	width: 80%;
+	float: center;
+	margin: 0 10px;
+	opacity: 1;
+}
+
+.btnsalvar {
+	width: 80%;
+	background: black;
+	padding: 5px;
+	font-size: 20px;
+	cursor: pointer;
+	margin: 8px 0;
+	border: none;
+	outline: none;
+	background: black;
+	color: maroon;
+	font-size: 18px;
+	float: center;
+	margin: 0 10px;
+	opacity: 0.9;
+	height: 30px;
+}
+
+.login-box h1 {
+	float: center;
+	font-size: 30px;
+	margin-bottom: 10px;
+	padding: 8px 0;
+	top: 10%;
+	color: black;
+	background: fuchsia;
+	opacity: 0.6;
+}
+
+.textbox {
+	width: 100%;
+	overflow: hidden;
+	font-size: 20px;
+	padding: 8px 0;
+	margin: 8px 0;
+	border-bottom: 2px solid #ffffff;
+	background: black;
+	opacity: 0.6;
+}
+
+.textbox i {
+	width: 26px;
+	float: left;
+	text-align: center;
+	color: white;
+}
+
+.textbox input {
+	border: none;
+	outline: none;
+	background: none;
+	color: white;
+	font-size: 18px;
+	width: 80%;
+	float: center;
+	margin: 0 10px;
+}
+
+.btn {
+	width: 80%;
+	background: black;
+	border: 2px solid #ffffff;
+	color: blue;
+	padding: 5px;
+	font-size: 20px;
+	cursor: pointer;
+	margin: 8px 0;
+}
+
+.ui-layout-north {
+	z-index: 20 !important;
+	overflow: visible !important;;
+}
+
+.ui-layout-north .ui-layout-unit-content {
+	overflow: visible !important;
+}
+
+.ui-widget, .ui-widget .ui-widget {
+	font-size: 95% !important;
+}

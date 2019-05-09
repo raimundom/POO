@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<meta charset="UTF-8" />
+	<title>Farm TEch Login</title>
+	<h:outputStylesheet library="css" name="estilo.css" />
+
+
+</h:head>
+<h:body>
+
+	<h:form>
+
+
+		<p:menubar>
+
+			<p:submenu label="Arquivo">
+				<p:menuitem value="Principal" url="principal.xhtml" />
+				<p:menuitem value="Sair" url="index.xhtml" />
+			</p:submenu>
+
+			<p:submenu label="Cadastros">
+				<p:menuitem value="Pessoas" url="Cadastropessoa.xhtml" />
+				<p:menuitem value="Maquinas" url="#" />
+				<p:menuitem value="Contas" url="#" />
+
+			</p:submenu>
+
+
+			<p:submenu label="Configurações">
+
+			</p:submenu>
+
+			<p:submenu label="Ajuda">
+				<p:menuitem value="Sobre" url="#" />
+
+			</p:submenu>
+
+		</p:menubar>
+	</h:form>
+
+
+
+	<img class="imgFundo" src="jpg/paineira.jpg" alt="login" />
+	<h1 class="titulo">Bem vindo ao Fazanda Tech</h1>
+	<h2 class="subtitulo">Sistema de Gestão Agricola</h2>
+
+	<div class="caixa">
+
+		<H3>Acesso Rápido</H3>
+
+		<p:commandButton value="Cadastrar Pessoas" id="cad" icon="pi pi-save"
+			action="Cadastropessoa.xhtml" />
+
+
+
+	</div>
+
+
+
+</h:body>
+
+</html>

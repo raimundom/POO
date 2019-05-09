@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+
+</h:head>
+
+<meta charset="UTF-8" />
+<title>Farm TEch Login</title>
+<h:outputStylesheet library="css" name="estilo.css" />
+
+<h:body>
+
+	<h:form>
+
+		<p:menubar>
+			<p:submenu label="Arquivo">
+				<p:menuitem value="Principal" url="principal.xhtml" />
+				<p:menuitem value="Sair" url="index.xhtml" />
+			</p:submenu>
+			<p:submenu label="Cadastros">
+				<p:menuitem value="Pessoas" url="Cadastropessoa.xhtml" />
+				<p:menuitem value="Maquinas" url="#" />
+				<p:menuitem value="Contas" url="#" />
+			</p:submenu>
+			<p:submenu label="Configurações">
+			</p:submenu>
+			<p:submenu label="Ajuda">
+				<p:menuitem value="Sobre" url="#" />
+			</p:submenu>
+		</p:menubar>
+
+	</h:form>
+
+	<div>
+
+		<img class="imgFundo" src="jpg/login.JPG" alt="login" />
+
+		<h:form id="formTabPessoa">
+
+			<div class="tabelapessoa">
+
+				<p:dataTable id="tbl" var="pessoa"
+					value="#{PessoaMB.getAllPessoa()}" paginator="true" rows="5"
+					style="margin-bottom:20px" scrollable="true" draggableRows="false"
+					cellSeparator="true" scrollHeight="200">
+
+					<p:column headerText="Cod" sortBy="#{pessoa.id}">
+						<h:outputText value="#{pessoa.id}" />
+					</p:column>
+
+					<p:column headerText="Nome" sortBy="#{pessoa.nome}">
+						<h:outputText value="#{pessoa.nome}" />
+					</p:column>
+
+					<p:column headerText="Sobrenome">
+						<h:outputText value="#{pessoa.usuario}" />
+					</p:column>
+
+					<p:column headerText="Telefone">
+						<h:outputText value="#{pessoa.telefone}" />
+					</p:column>
+
+					<p:column headerText="Email">
+						<h:outputText value="#{pessoa.email}" />
+					</p:column>
+
+					<p:column headerText="Conta Corrente">
+						<h:outputText value="#{pessoa.contaCorrente}" />
+					</p:column>
+
+					<p:column headerText="Senha">
+						<h:outputText value="#{pessoa.senha}" />
+					</p:column>
+
+					<p:column headerText="Tipo">
+						<h:outputText value="#{pessoa.tipo}" />
+					</p:column>
+
+					<p:column headerText="Opções">
+
+						<p:commandButton id="apagar" icon="fa fa-fw fa-eraser"
+							action="#{PessoaMB.excluir(pessoa.id)}"
+							update=":formTabPessoa:tbl" iconAlign="right" />
+
+						<p:commandButton id="editar" icon="fa fa-fw fa-edit"
+							oncomplete="PF('dlgforEdit').show();" update=":formTabPessoa:tbl"
+							iconAlign="right" />
+
+					</p:column>
+
+					<f:facet name="footer">
+						<p:commandButton value="Novo"
+							oncomplete="PF('dlgforNovo').show();"
+							update=":frmforNovo:pnforNovo" />
+					</f:facet>
+				</p:dataTable>
+
+			</div>
+		</h:form>
+
+		<div class="DialogoCadPess">
+
+			<p:dialog widgetVar="dlgforNovo" closable="false" draggable="false"
+				resizable="false" header="Cadastar Pesoa" modal="true"
+				appendTo="@(body)">
+
+				<h:form id="frmforNovo">
+
+					<h:panelGrid id="pnforNovo" columns="2">
+
+						<p:outputLabel for="nome" value="Nome" />
+						<p:inputText id="nome" value="#{PessoaMB.nome}" />
+
+						<p:outputLabel for="usuario" value="Usuario" />
+						<p:inputText id="usuario" value="#{PessoaMB.usuario}" />
+
+						<p:outputLabel for="telefone" value="Telefone:" />
+						<p:inputText id="telefone" value="#{PessoaMB.telefone}" />
+
+						<p:outputLabel for="email" value="E-mail:" />
+						<p:inputText id="email" value="#{PessoaMB.email}" />
+
+						<p:outputLabel for="contaCorrente" value="Conta Corrente" />
+						<p:inputText id="contaCorrente" value="#{PessoaMB.contaCorrente}" />
+
+						<p:outputLabel for="senha" value="Senha:" />
+						<p:inputText type="password" id="senha" value="#{PessoaMB.senha}" />
+
+						<p:outputLabel for="tipo" value="Tipo:" />
+						<p:inputText id="tipo" value="#{PessoaMB.tipo}" />
+					</h:panelGrid>
+
+					<h:panelGrid columns="2">
+						<p:commandButton value="Inserir" id="inserir"
+							action="#{PessoaMB.salvar()}" update=":formTabPessoa:tbl"
+							icon="pi pi-save" iconAlign="right"
+							onclick="PF('dlgforNovo').hide();" />
+
+						<p:commandButton value="Cancelar" process="@this"
+							onclick="PF('dlgforNovo').hide();" />
+
+					</h:panelGrid>
+				</h:form>
+			</p:dialog>
+
+		</div>
+
+		<div class="DialogoEditPess">
+
+			<p:dialog widgetVar="dlgforEdit" closable="false" draggable="false"
+				resizable="false" header="Editar Pesoa" modal="true"
+				appendTo="@(body)">
+
+				<h:form id="frmforEdit">
+
+					<h:panelGrid id="pnforEdit" columns="2">
+
+						<p:outputLabel for="id" value="ID:" />
+						<p:spinner id="id" value="#{PessoaMB.id}" />
+
+						<p:outputLabel for="nome" value="Nome" />
+						<p:inputText id="nome" value="#{PessoaMB.nome}" />
+
+						<p:outputLabel for="usuario" value="Usuario" />
+						<p:inputText id="usuario" value="#{PessoaMB.usuario}" />
+
+						<p:outputLabel for="telefone" value="Telefone:" />
+						<p:inputText id="telefone" value="#{PessoaMB.telefone}" />
+
+						<p:outputLabel for="email" value="E-mail:" />
+						<p:inputText id="email" value="#{PessoaMB.email}" />
+
+						<p:outputLabel for="contaCorrente" value="Conta Corrente" />
+						<p:inputText id="contaCorrente" value="#{PessoaMB.contaCorrente}" />
+
+						<p:outputLabel for="senha" value="Senha:" />
+						<p:inputText type="password" id="senha" value="#{PessoaMB.senha}" />
+
+						<p:outputLabel for="tipo" value="Tipo:" />
+						<p:inputText id="tipo" value="#{PessoaMB.tipo}" />
+					</h:panelGrid>
+
+					<h:panelGrid columns="2">
+						<p:commandButton value="Salvar" id="salvar"
+							update=":formTabPessoa:tbl" icon="pi pi-save" iconAlign="right"
+							onclick="PF('dlgforNovo').hide();"
+							action="#{PessoaMB.Atualizar(PessoaMB.id,PessoaMB.nome,PessoaMB.usuario,PessoaMB.telefone, PessoaMB.email, PessoaMB.contaCorrente,PessoaMB.senha, PessoaMB.tipo)}" />
+
+						<p:commandButton value="Cancelar" process="@this"
+							onclick="PF('dlgforEdit').hide();" />
+
+					</h:panelGrid>
+				</h:form>
+			</p:dialog>
+
+		</div>
+
+	</div>
+
+</h:body>
+</html>
