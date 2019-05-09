@@ -1,10 +1,20 @@
 package model;
 
+/**
+ * @author Raimundo Medeiros
+ */
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "pessoa")
 public class Pessoa {
+	
+	/**
+	 * @category Modelo
+	 * @since versao 1
+	 * @see Classe de para criação do objeto pessoa
+	 */
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column

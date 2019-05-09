@@ -1,4 +1,7 @@
 package model;
+/**
+ * @author Raimundo Medeiros
+ */
 
 import javax.persistence.*;
 import org.hibernate.HibernateError;
