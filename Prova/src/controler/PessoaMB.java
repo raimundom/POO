@@ -1,9 +1,5 @@
 package controler;
 
-/**
- * @author Raimundo Medeiros
- *
- */
 
 import java.util.List;
 
@@ -13,19 +9,12 @@ import model.*;
 
 @ManagedBean
 public class PessoaMB {
-	/**
-	 * @category Maneged Beean
-	 * @since versao 1
-	 * @see Criação da classe MB para integração com o HTML
-	 */
 	
 	public PessoaMB() {
 
 	}
 
-	/**
-	 * @see Criar uma instancia de pessoa para passar os paramentros de criação atraves do HTML
-	 */
+
 	private Pessoa p = new Pessoa();
 
 	public String getId() {
@@ -94,11 +83,7 @@ public class PessoaMB {
 	
 	
 
-	/**
-	 * @see Metodo Salvar utilizado para criar o objeto do tipo Pessoa
-	 * @since versao 1.0
-	 * @author Raimundo Medeiros
-	 */
+
 	public void salvar() {
 		
 		
